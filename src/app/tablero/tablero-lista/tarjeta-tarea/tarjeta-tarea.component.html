@@ -1,0 +1,11 @@
+<div class="tarjetaContainer">
+    <div class="tarjeta">
+        <p>{{tarea.titulo}}</p>
+        <select name="listsNames" class="selectNewList" (change)="onSelectChange($event)">
+            <option value="" disabled selected></option>
+            <ng-container *ngFor="let info of listaIdAndName">
+                <option *ngIf="info.id !== listaId" value="{{info.id}}">{{info.titulo}}</option>
+            </ng-container>
+        </select>
+    </div>
+</div>

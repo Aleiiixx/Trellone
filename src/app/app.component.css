@@ -1,0 +1,13 @@
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.sideNav{
+    flex: 1.5;
+}
+
+.content{
+    flex: 8.5;
+}

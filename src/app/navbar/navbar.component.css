@@ -1,0 +1,29 @@
+.navBar{
+    width: 100%;
+    background-color: #1d2125;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+}
+
+.navBarIcons, .navBarButton{
+    margin-left: 16px;
+}
+
+.navBarText{
+    margin-left: 24px;
+}
+
+.navBarText a{ 
+    text-decoration: none;
+    color: #98a6b3;
+    font-size: 14px
+}
+
+.navBarButton button{
+    padding: 8px;
+    background-color: #579ffb;
+    border: none;
+    border-radius: 2px;
+}

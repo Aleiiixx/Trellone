@@ -1,0 +1,24 @@
+.containerLista{
+    height: 100%;
+    width: 250px;
+    padding: 8px;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    background-color: #101205;
+    width: 100%;
+    height: auto;
+    color: #9faab2;
+    border-radius: 10px;
+}
+
+.listaHeader{ 
+    display: flex;
+    flex-direction: row;
+}
+
+.listaTitulo, .agregarTarea{
+    margin-left: 16px;
+}

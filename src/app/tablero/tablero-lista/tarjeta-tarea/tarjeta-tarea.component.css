@@ -1,0 +1,33 @@
+.tarjetaContainer{
+    width: 100%;
+    height: 35px;
+    background-color: #22272b00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.tarjeta{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    background-color: #22272b;
+    height: 100%;
+    border-radius: 9px;
+}
+
+.tarjeta p{
+    margin-left: 8px;
+    flex: 8;
+}
+
+.tarjeta select{
+    width: 8%;
+    flex: 1;
+}
+
+.tarjeta::after {
+    content: '';
+    flex: 0.5; /* Ocupa 1 parte del espacio disponible */
+}

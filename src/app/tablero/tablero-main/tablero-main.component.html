@@ -1,0 +1,8 @@
+<div class="tablero">
+    <app-tablero-header></app-tablero-header>
+    <div class="listas">
+        <ng-container *ngFor="let lista of selectedTablero.listas">
+            <app-tablero-lista [lista]="lista" [tableroId]="selectedTablero.id"></app-tablero-lista>
+        </ng-container>
+    </div>
+</div>

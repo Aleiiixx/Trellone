@@ -1,0 +1,10 @@
+.tablero{
+    height: 100vh;
+    overflow: auto;
+}
+
+.listas{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}

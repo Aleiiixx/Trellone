@@ -1,0 +1,18 @@
+<nav class="navBar">
+    <ng-container *ngFor="let item of navBarValues">
+        <!-- Si el item es de tipo 'icon' -->
+        <div *ngIf="item.type === 'icon'" class="navBarIcons">
+            <!-- Renderiza algo específico para 'icon' -->
+            <img [src]="" alt="Icon">
+        </div>
+        <!-- Si el item es de tipo 'text' -->
+        <div *ngIf="item.type === 'text'" class="navBarText">
+            <!-- Renderiza algo específico para 'text' -->
+            <a [href]="item.route">{{ item.title }}</a>
+        </div>
+        <div *ngIf="item.type === 'button'" class="navBarButton">
+            <!-- Renderiza algo específico para 'text' -->
+            <button type="button">{{ item.title }}</button>
+        </div>
+    </ng-container>
+</nav>

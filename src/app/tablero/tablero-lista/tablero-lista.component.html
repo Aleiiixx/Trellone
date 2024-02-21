@@ -1,0 +1,17 @@
+<div class="containerLista">
+    <div class="lista">
+        <div class="listaHeader">
+            <div class="listaTitulo">
+                <h5>{{lista.titulo}}</h5>
+            </div>
+        </div>
+        <ng-container *ngFor="let tarea of lista.tareas">
+            <app-tarjeta-tarea [tarea]="tarea" [listaId]="lista.id" [tableroId]="tableroId"></app-tarjeta-tarea>
+        </ng-container>
+        <div class="listaFooter">
+            <div class="agregarTarea">
+                <h5>Añada una tarjeta</h5>
+            </div>
+        </div>
+    </div>
+</div>
