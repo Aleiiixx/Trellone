@@ -1,4 +1,22 @@
 .sideNavSection{
     height: 100vh;
     background-color: #221d24;
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+.tablerosList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tablerosListElements{
+    color: #98a6b3;
+    padding: 12px;
+}
+
+.tablerosListElements:hover{
+    background-color: #3d3441;
 }

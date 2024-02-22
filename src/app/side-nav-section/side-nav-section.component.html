@@ -1,3 +1,12 @@
 <nav class="sideNavSection">
 
+    <div class="tablerosList">
+        <ng-container *ngFor="let tablero of tableros">
+            <div class="tablerosListElements" (click)="cambiarTablero(tablero.id)">
+                <a>{{ tablero.titulo }}</a>
+            </div>
+        </ng-container>
+    </div>
+
+
 </nav>

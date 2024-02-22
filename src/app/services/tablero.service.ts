@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 export interface Tarea {
   id: number;
@@ -61,11 +62,74 @@ export class TableroService {
         },
       ]
     },
+    {
+      id: 2,
+      titulo: 'Tablero de Ejemplo 2',
+      listas: [
+        {
+          id: 1,
+          titulo: 'Lista de Tareas 1',
+          tareas: [
+            { id: 1, titulo: 'Tarea 4.1', descripcion: 'Descripción de la tarea 4.1', completada: false },
+            { id: 2, titulo: 'Tarea 4.2', descripcion: 'Descripción de la tarea 4.2', completada: false },
+            { id: 3, titulo: 'Tarea 4.3', descripcion: 'Descripción de la tarea 4.3', completada: false },
+            { id: 4, titulo: 'Tarea 4.4', descripcion: 'Descripción de la tarea 4.4', completada: false },
+          ]
+        },
+        {
+          id: 2,
+          titulo: 'Lista de Tareas 2',
+          tareas: [
+            { id: 1, titulo: 'Tarea 5.1', descripcion: 'Descripción de la tarea 5.1', completada: false },
+            { id: 2, titulo: 'Tarea 5.2', descripcion: 'Descripción de la tarea 5.2', completada: false },
+            { id: 3, titulo: 'Tarea 5.3', descripcion: 'Descripción de la tarea 5.3', completada: false },
+            { id: 4, titulo: 'Tarea 5.4', descripcion: 'Descripción de la tarea 5.4', completada: false },
+          ]
+        },
+        {
+          id: 3,
+          titulo: 'Lista de Tareas 3',
+          tareas: [
+            { id: 1, titulo: 'Tarea 6.1', descripcion: 'Descripción de la tarea 6.1', completada: false },
+            { id: 2, titulo: 'Tarea 6.2', descripcion: 'Descripción de la tarea 6.2', completada: false },
+            { id: 3, titulo: 'Tarea 6.3', descripcion: 'Descripción de la tarea 6.3', completada: false },
+            { id: 4, titulo: 'Tarea 6.4', descripcion: 'Descripción de la tarea 6.4', completada: false },
+          ]
+        },
+      ]
+    },
+    {
+      id: 3,
+      titulo: 'Tablero de Ejemplo 3',
+      listas: [
+        {
+          id: 1,
+          titulo: 'Lista de Tareas 1',
+          tareas: [
+            { id: 1, titulo: 'Tarea 7.1', descripcion: 'Descripción de la tarea 4.1', completada: false },
+            { id: 2, titulo: 'Tarea 7.2', descripcion: 'Descripción de la tarea 4.2', completada: false },
+            { id: 3, titulo: 'Tarea 7.3', descripcion: 'Descripción de la tarea 4.3', completada: false },
+            { id: 4, titulo: 'Tarea 7.4', descripcion: 'Descripción de la tarea 4.4', completada: false },
+          ]
+        },
+      ]
+    }
   ];
 
   private selectedTablero: Tablero = this.tableros[0];
+  private selectedTableroSubject = new BehaviorSubject<Tablero>(this.tableros[0]);
+  selectedTablero$ = this.selectedTableroSubject.asObservable();
 
   constructor() { }
+
+  selectTablero(tableroID: number): void {
+    const tableroEncontrado = this.tableros.find(tablero => tablero.id === tableroID);
+    if (tableroEncontrado) {
+      this.selectedTableroSubject.next(tableroEncontrado);
+    } else {
+      this.selectedTableroSubject.next(this.tableros[0]);
+    }
+  }
 
   getTableros(): Tablero[] {
     return this.tableros;
@@ -115,9 +179,10 @@ export class TableroService {
     
   }
 
+  // Función para reasignar los IDs de las tareas.
   private reasignarIds(tareas: Tarea[]): void {
     tareas.forEach((tarea, index) => {
-      tarea.id = index + 1; // Reasignar ID basado en el índice de la tarea en la lista
+      tarea.id = index + 1; 
     });
   }
 
